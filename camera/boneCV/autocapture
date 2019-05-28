@@ -1,0 +1,52 @@
+#!/bin/bash
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+hour=$(date +"%H")
+dow=$(date +%u)
+export SSHPASS=JFsolo6559
+
+#exec /home/debian/boneCV/grabber
+#cd /home/debian/boneCV/ && convert grabber000.ppm $hour.jpg
+#mv grabber000.jpg $hour.jpg
+
+./grabber
+convert grabber000.ppm $hour.jpg
+#/usr/bin/convert /home/debian/boneCV/grabber000.ppm /home/debian/boneCV/$hour.jpg
+rm /home/debian/boneCV/grabber000.ppm
+
+
+if [[ $dow -eq "1" ]] ; then
+	echo Lundi
+	sshpass -e scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/lundi
+	rm $hour.jpg
+
+elif [[ $dow -eq "2" ]] ; then
+        echo Mardi
+        sshpass -e scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/mardi
+        rm $hour.jpg
+
+elif [[ $dow -eq "3" ]] ; then
+        echo Mercredi
+        sshpass -e scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/mercredi
+        rm $hour.jpg
+
+elif [[ $dow -eq "4" ]] ; then
+        echo Jeudi
+        sshpass -e scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/jeudi
+        rm $hour.jpg
+
+elif [[ $dow -eq "5" ]] ; then
+	echo Vendredi
+        sshpass -e scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/vendredi
+        rm $hour.jpg
+
+elif [[ $dow -eq "6" ]] ; then
+	echo Samedi
+        sshpass -e scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/samedi
+        rm $hour.jpg
+
+elif [[ $dow -eq "7" ]] ; then
+	echo Dimanche
+	sshpass -e scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/dimanche
+	rm $hour.jpg
+fi
+

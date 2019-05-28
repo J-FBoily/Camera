@@ -1,0 +1,59 @@
+h1{
+    position: relative;
+    max-width: 1000px;
+    height: auto;
+    text-align: center;
+    padding: 10px; 
+    margin: 0px auto 0px auto; /*TLBR*/
+
+    background-image: linear-gradient(yellow, black);
+}
+
+body{
+    position: center;
+    color: white;
+    background: black;
+    text-align: center;
+    margin: 0px auto 0px auto; /*TLBR*/
+
+}
+
+li{
+    position: relative;
+    margin: 0px auto 0px auto;
+    max-width: 1020px;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+div.formulaire{
+    position: relative;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    max-width: 1000px;
+    margin: inherit;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: black;
+}
+div.imgcontainer{
+    position:relative;
+    max-width: 1020px;
+    margin: 0px auto 0px auto;
+    background-image: linear-gradient(black, yellow);
+}
+div.zoom{
+    transition: 1s;
+}
+div.zoom:hover{
+    transform: scale(2);
+}
+div.datecontainer{
+    display: block;
+    position:relative;
+    text-align: center;
+    max-width: 200px;
+    margin: 0px auto 0px auto;
+    background-color: white;
+}

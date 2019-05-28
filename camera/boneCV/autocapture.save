@@ -1,0 +1,35 @@
+#!/bin/bash
+
+hour=$(date +"%H")
+dow=$(date +%u)
+filename=$dow+$hour
+#touch image$hour
+
+if [[ $dow -eq "1" ]] ; then
+	echo Lundi
+	##./grabber
+	##convert grabber000.ppm $hour.jpg
+	##rm grabber000.ppm
+        scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/came
+elif [[ $dow -eq "2" ]] ; then
+        echo Mardi
+elif [[ $dow -eq "3" ]] ; then
+        echo Mercredi
+elif [[ $dow -eq "4" ]] ; then
+        echo Jeudi
+elif [[ $dow -eq "5" ]] ; then
+	echo Vendredi
+elif [[ $dow -eq "6" ]] ; then
+	echo Samedi
+elif [[ $dow -eq "7" ]] ; then
+	echo Dimanche
+	touch $hour.jpg
+	scp $hour.jpg cyrixx@192.168.7.1:/home/cyrixx/Desktop/School/Programming/camera/static/pics/dimanche
+fi
+
+##./grabber
+
+##convert grabber000.ppm $hour.jpg
+
+##rm grabber000.ppm
+
